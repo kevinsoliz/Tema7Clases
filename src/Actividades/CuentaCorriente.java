@@ -7,6 +7,7 @@ public class CuentaCorriente {
     String dni;
     public String titular;
     private double saldo;
+    private static String banco;
 
     public CuentaCorriente(String dni, String titular, double saldo) {
         this.dni = dni;
@@ -38,5 +39,13 @@ public class CuentaCorriente {
         System.out.println("DNI: " + this.dni
                         + "\nTitular: " + this.titular
                         + "\nSaldo: " + NumberFormat.getCurrencyInstance(Locale.FRANCE).format(saldo));
+    }
+
+    public static void setBanco(String banco) {
+        CuentaCorriente.banco = banco;
+    }
+
+    public static String getBanco() {
+        return banco;
     }
 }
