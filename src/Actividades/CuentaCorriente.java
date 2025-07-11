@@ -4,8 +4,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class CuentaCorriente {
-    private String dni;
-    private String titular;
+    String dni;
+    public String titular;
     private double saldo;
 
     public CuentaCorriente(String dni, String titular, double saldo) {
