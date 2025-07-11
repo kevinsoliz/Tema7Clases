@@ -8,19 +8,21 @@ public class CuentaCorriente {
     public String titular;
     private double saldo;
     private static String banco;
+    private Gestor gestor;
 
-    public CuentaCorriente(String dni, String titular, double saldo) {
+    public CuentaCorriente(String dni, String titular, double saldo, Gestor gestor) {
         this.dni = dni;
         this.titular = titular;
         this.saldo = saldo;
+        this.gestor = gestor;
     }
 
     public CuentaCorriente(String dni, String titular) {
-        this(dni, titular, 0);
+        this(dni, titular, 0, null);
     }
 
     public CuentaCorriente(String dni, double saldo) {
-        this(dni, "", saldo);
+        this(dni, "", saldo, null);
     }
 
     public void sacarDinero(double valor) {
@@ -38,7 +40,8 @@ public class CuentaCorriente {
     public void mostrarInformacion(){
         System.out.println("DNI: " + this.dni
                         + "\nTitular: " + this.titular
-                        + "\nSaldo: " + NumberFormat.getCurrencyInstance(Locale.FRANCE).format(saldo));
+                        + "\nSaldo: " + NumberFormat.getCurrencyInstance(Locale.FRANCE).format(saldo)
+                        + "\nGestor: " + gestor.nombre);
     }
 
     public static void setBanco(String banco) {
