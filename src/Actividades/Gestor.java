@@ -18,4 +18,10 @@ public class Gestor {
     public String getTelefono() {
         return telefono;
     }
+
+    public void mostrarInfo(){
+        System.out.println("Nombre: " + this.nombre
+                        + "\nTelefono: " + this.telefono
+                        + "\nImporte Max: " + this.importeMax);
+    }
 }

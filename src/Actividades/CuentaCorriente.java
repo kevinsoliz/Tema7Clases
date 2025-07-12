@@ -25,7 +25,7 @@ public class CuentaCorriente {
         this(dni, "", saldo, null);
     }
 
-    public void sacarDinero(double valor) {
+    public void sacarDinero(double valor) { // profe lo hizo con boolean
         if(saldo > 0 && valor <= saldo)
             saldo -= valor;
         else
@@ -50,5 +50,13 @@ public class CuentaCorriente {
 
     public static String getBanco() {
         return banco;
+    }
+
+    public Gestor getGestor() {
+        return gestor;
+    }
+
+    public void setGestor(Gestor gestor) {
+        this.gestor = gestor;
     }
 }
