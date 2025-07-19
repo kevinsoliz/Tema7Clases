@@ -48,6 +48,13 @@ public class Lista {
 //        }
         System.arraycopy(lista, indice + 1, lista, indice, getNumElementos() - indice - 1);
         lista = Arrays.copyOf(lista, lista.length - 1);
+
+        //Profe:
+//        for (int i = indice + 1; i < this.lista.length; i++) {
+//            this.lista[i - 1] = this.lista[i];
+//        }
+//
+//        this.lista = Arrays.copyOf(this.lista, this.lista.length - 1);
     }
 
     public Integer obtenerElemento(byte indice){
