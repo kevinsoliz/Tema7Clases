@@ -98,8 +98,14 @@ public class Conjunto {
 
     public static Conjunto union(Conjunto c1, Conjunto c2){
         var union =  new Conjunto();
-        union.insertar(c1);
-        union.insertar(c2);
+        insercionDirecta(c1, union);
+        insercionDirecta(c2, union);
         return union;
+    }
+
+    private static void insercionDirecta(Conjunto c1, Conjunto union) {
+        for(int i = 0; i < c1.numeroElementos(); i++){
+            union.conjunto.insertarFinal(c1.conjunto.obtenerElemento((byte) i));
+        }
     }
 }
