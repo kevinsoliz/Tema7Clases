@@ -108,4 +108,30 @@ public class Conjunto {
             union.conjunto.insertarFinal(c1.conjunto.obtenerElemento((byte) i));
         }
     }
+
+    public static Conjunto interseccion(Conjunto c1, Conjunto c2){
+        var interseccion = new Conjunto();
+        for(int i = 0; i < c1.numeroElementos(); i++){
+            for(int j = 0; j < c2.numeroElementos(); j++){
+                Integer elementoC2 = c2.conjunto.obtenerElemento((byte) j);
+                if(c1.pertenece(elementoC2))
+                    interseccion.insertar(elementoC2);
+            }
+        }
+        return interseccion;
+    }
+
+    public static Conjunto diferencia(Conjunto c1, Conjunto c2){
+        var diferencia = new Conjunto();
+        for(int i = 0; i < c2.numeroElementos(); i++){
+            for(int j = 0; j < c1.numeroElementos(); j++){
+                Integer elementoC1 = c1.conjunto.obtenerElemento((byte) j);
+                if(!c2.pertenece(elementoC1))
+                    diferencia.insertar(elementoC1);
+            }
+        }
+        return diferencia;
+    }
+
+
 }

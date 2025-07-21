@@ -15,7 +15,13 @@ public class Main {
         conjunto2.insertar(55);
         conjunto2.insertar(66);
         conjunto2.insertar(77);
+        conjunto2.insertar(88);
 
+        var conjunto3 = new Conjunto();
+        conjunto3.insertar(2);
+        conjunto3.insertar(33);
+        conjunto3.insertar(55);
+        conjunto3.insertar(99);
         conjunto.insertar(conjunto2);
 //        conjunto.muestra();
 //        System.out.println("Eliminar");
@@ -29,6 +35,8 @@ public class Main {
         System.out.println(Conjunto.incluido(conjunto, conjunto2));
         System.out.println(Conjunto.incluido(conjunto2, conjunto));
         Conjunto.union(conjunto, conjunto2).muestra();
+        Conjunto.interseccion(conjunto2, conjunto).muestra();
+        Conjunto.diferencia(conjunto3, conjunto2).muestra();
 
     }
 }
