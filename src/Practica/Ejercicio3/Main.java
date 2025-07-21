@@ -20,6 +20,7 @@ public class Main {
         conjunto.muestra();
         System.out.println("Eliminar");
         System.out.println(conjunto.iguales(conjunto2));
+        conjunto.eliminarConjunto(conjunto2);
         conjunto.muestra();
 
     }
