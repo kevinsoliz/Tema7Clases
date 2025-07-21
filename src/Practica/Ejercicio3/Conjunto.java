@@ -71,17 +71,10 @@ public class Conjunto {
 
     public boolean iguales(Conjunto otroConjunto){
         boolean iguales = false;
-        int contador = 0;
-        Integer elemento;
-
-        do {
-            elemento = conjunto.obtenerElemento((byte) contador);
-            contador++;
-        } while (contador < numeroElementos() && otroConjunto.pertenece(elemento)); //Había que buscar los elementos del primer conjunto en el segundo.
-        //Aqui hay un problema: el primer conjunto puede estar vacio, fuck
-
-        if (contador == numeroElementos())
-            iguales = true;
+        for(int i = 0; i < numeroElementos() && !iguales; i++){
+            if(pertenece(otroConjunto.conjunto.obtenerElemento((byte)i)))
+                iguales = true;
+        }
 
         return iguales;
     }
