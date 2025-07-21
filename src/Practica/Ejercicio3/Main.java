@@ -28,6 +28,7 @@ public class Main {
         conjunto2.muestra();
         System.out.println(Conjunto.incluido(conjunto, conjunto2));
         System.out.println(Conjunto.incluido(conjunto2, conjunto));
+        System.out.println("Nuevo: " + Conjunto.union(conjunto, conjunto2));
 
     }
 }

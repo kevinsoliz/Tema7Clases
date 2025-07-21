@@ -78,6 +78,7 @@ public class Conjunto {
             elemento = conjunto.obtenerElemento((byte) contador);
             contador++;
         } while (contador < numeroElementos() && otroConjunto.pertenece(elemento)); //Había que buscar los elementos del primer conjunto en el segundo.
+        //Aqui hay un problema: el primer conjunto puede estar vacio, fuck
 
         if (contador == numeroElementos())
             iguales = true;
@@ -100,5 +101,12 @@ public class Conjunto {
 //        }
 
         return incluido;
+    }
+
+    public static Conjunto union(Conjunto c1, Conjunto c2){
+        var union =  new Conjunto();
+        union.insertar(c1);
+        union.insertar(c2);
+        return union;
     }
 }
