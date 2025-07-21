@@ -84,4 +84,21 @@ public class Conjunto {
 
         return iguales;
     }
+
+    public static boolean incluido(Conjunto c1, Conjunto c2){
+        boolean incluido = true;
+        for(int i = 0; i < c1.numeroElementos() && incluido; i++){
+            Integer elementoC1 = c1.conjunto.obtenerElemento((byte) i);
+            if(!(c2.pertenece(elementoC1)))
+              incluido = false;
+        }
+//        int contador = 0;
+//        while(incluido && contador < c1.numeroElementos()){
+//            if(!(c2.pertenece(c1.conjunto.obtenerElemento((byte) contador))))
+//                incluido = false;
+//            contador++;
+//        }
+
+        return incluido;
+    }
 }
